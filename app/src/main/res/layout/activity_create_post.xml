@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatePost"
+    android:orientation="vertical"
+    >
+    <EditText
+        android:id="@+id/et_createTitle_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Enter your post title"
+        />
+<EditText
+    android:id="@+id/et_createDesc_id"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:maxLines="5"
+    android:padding="10dp"
+    android:hint="Enter your post description"
+    />
+    <Button
+        android:id="@+id/btn_submitPost_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        />
+</LinearLayout>

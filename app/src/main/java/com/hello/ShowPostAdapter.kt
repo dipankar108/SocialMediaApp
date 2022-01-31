@@ -1,5 +1,6 @@
 package com.hello
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,20 +33,19 @@ class ShowPostAdapter(private val listener: recyclerviewinterface) : RecyclerVie
 
     override fun onBindViewHolder(holder: ViewPostAdapter, position: Int) {
         var data=arrayList[position]
-        holder.titleView.text=data.title
+        holder.titleView.text="hi"
         holder.descView.text=data.desc
         holder.liken.text=data.liked.size.toString()
         if (data.liked.contains(auth.uid))holder.likeUnliking.setImageResource(R.drawable.ic_liked)
         else holder.likeUnliking.setImageResource(R.drawable.ic_unliked)
         holder.layoutId.setOnClickListener{
-            listener.onClickItem(data.docID)
+            listener.onClickItem(data.docId)
         }
     }
-
     override fun getItemCount(): Int {
       return arrayList.size
     }
     fun setArrayList(arr:List<Post>){
-        arrayList.addAll(arr)
+        arrayList= arr as ArrayList<Post>
     }
 }

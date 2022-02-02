@@ -33,7 +33,7 @@ class ShowPostAdapter(private val listener: recyclerviewinterface) : RecyclerVie
 
     override fun onBindViewHolder(holder: ViewPostAdapter, position: Int) {
         var data=arrayList[position]
-        holder.titleView.text="hi"
+        holder.titleView.text=data.title
         holder.descView.text=data.desc
         holder.liken.text=data.liked.size.toString()
         if (data.liked.contains(auth.uid))holder.likeUnliking.setImageResource(R.drawable.ic_liked)

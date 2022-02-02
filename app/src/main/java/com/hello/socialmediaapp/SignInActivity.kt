@@ -73,7 +73,7 @@ val credential=GoogleAuthProvider.getCredential(idToken,null)
       .addOnCompleteListener { task->
           if (task.isSuccessful){
               Toast.makeText(this,"Sign in successfull",Toast.LENGTH_SHORT).show()
-var intent=Intent(this,MainActivity::class.java)
+              var intent=Intent(this,MainActivity::class.java)
               startActivity(intent)
           }
       }

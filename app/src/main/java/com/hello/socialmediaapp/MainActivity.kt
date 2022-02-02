@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity.apply
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import androidx.core.view.GravityCompat.apply
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.Query
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity(), recyclerviewinterface {
     var auth = Firebase.auth
     val db = Firebase.firestore
     val TAG = "TAG"
+    val EXTRA_DOC_ID="com.hello.socialmediaapp.docId"
     val madapter = ShowPostAdapter(this)
     private var arrList: ArrayList<Post> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,7 +74,10 @@ class MainActivity : AppCompatActivity(), recyclerviewinterface {
     }
 
     override fun onClickItem(docId: String) {
-        Log.d(TAG, "onClickItem: " + docId)
+        val intent=Intent(this,ViewPost::class.java).apply {
+            putExtra(EXTRA_DOC_ID,docId)
+        }
+        startActivity(intent)
     }
 }
 
